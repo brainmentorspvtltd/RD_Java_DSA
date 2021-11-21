@@ -1,0 +1,15 @@
+COMPANY NAME
+DATE
+
+Enter FirstName 
+Enter LastName
+Basic Salary - 50,000
+Allowances
+HRA - 50% of Basic Salary
+DA - 15% of Basic Salary
+TA - 30% of Basic Salary
+MA - 20% of Basic Salary
+PF - 5% of Basic Salary 5% Employer
+GS = BS + HRA + DA + TA + MA 
+NS = GS - PF - TAX
+TAX = 10% of GS
