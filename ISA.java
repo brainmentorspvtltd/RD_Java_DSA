@@ -1,9 +1,9 @@
 
 
-class Account{
-//abstract class Account{
+ //class Account{
+abstract class Account{
 	int id;
-	String branch;
+	final String branch = "Noida"; 
 	String name;
 	void deposit() {
 		System.out.println("Account Deposit");
@@ -11,15 +11,15 @@ class Account{
 	void withDraw() {
 		System.out.println("Account WithDraw");
 	}
-	void checkBalance() {
+	final void checkBalance() {
 		System.out.println("Account Check Balance");
 	}
 	//abstract void roi();
-	void roi() {
+	 void roi() {
 		System.out.println("Generic ROI By Account");
 	}
 }
-class SavingAccount extends Account{
+final class SavingAccount extends Account{
 	@Override
 	void roi() {
 		System.out.println("Low Interest Rec From Bank");
@@ -73,6 +73,8 @@ public class ISA {
 
 	public static void main(String[] args) {
 		//Caller.callMe(new Account());
+		final int X = 10;
+		final SavingAccount sa = new SavingAccount();
 		Caller.callMe(new SavingAccount());
 		Caller.callMe(new CurrentAccount());
 		Caller.callMe(new FixedDepositAccount());
