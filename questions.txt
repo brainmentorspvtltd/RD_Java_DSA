@@ -1,0 +1,62 @@
+Q1. Write a program to calculate the sum of following series where n is input by user. 
+1 + 1/2 + 1/3 + 1/4 + 1/5 +…………1/n 
+
+Q2. Print the Pattern
+**********
+**********
+**********
+**********
+
+Q3. Print the Multiplication Table from 1 to N
+1x1 = 1, 2x1 = 2, 3x1 = 3, 4x1 = 4, 5x1 = 5, 6x1 = 6, 7x1 = 7, 8x1 = 8
+...
+1x10 = 10, 2x10 = 20, 3x10 = 30, 4x10 = 40, 5x10 = 50, 6x10 = 60, 7x10 = 70, 8x10 = 80
+
+
+Q4. Write a  program to find the Armstrong number for a given range of number. 
+Test Data :
+Input starting number of range: 1
+Input ending number of range : 1000
+Expected Output :
+Armstrong numbers in given range are: 1 153 370 371 407
+
+
+Q5. Write a Program to print the Prime number b/w Given Range 
+1 to N
+
+
+Q6. Write a  program to find HCF (Highest Common Factor) of two numbers.
+Test Data :
+Input 1st number for HCF: 24
+Input 2nd number for HCF: 28
+Expected Output :
+HCF of 24 and 28 is : 4
+
+Q7. Write a program  to find LCM of any two numbers.
+Test Data :
+Input 1st number for LCM: 15
+Input 2nd number for LCM: 20
+Expected Output :
+The LCM of 15 and 20 is : 60
+
+
+Q8. Write a  program to find out the sum of an A.P. series.
+Test Data :
+Input the starting number of the A.P. series: 1
+Input the number of items for the A.P. series: 10
+Input the common difference of A.P. series: 4
+Expected Output :
+The Sum of the A.P. series are :
+1 + 5 + 9 + 13 + 17 + 21 + 25 + 29 + 33 + 37 = 190
+
+
+Q9. Write a program  to convert a decimal number into octal number.
+Test Data :
+Enter a number to convert : 79
+Expected Output :
+The Octal of 79 is 117
+
+Q10. Print the Second Smallest Number , From Given 3 Numbers
+Input : 10,40,20
+Output : 20
+
