@@ -1,0 +1,84 @@
+Rotate the array - Medium
+
+arr = {5,0,1,4,2}
+k = 3
+o/p = {1,4,2,5,0}
+
+Approach 1 : 
+for(int j = 1; j <= k; j++) {
+    int lastElement = arr[arr.length - 1];
+    for(int i = arr.length - 2; i >= 0; i--) {
+	arr[i+1] = arr[i];
+   }
+}
+
+Approach 2 : Using %
+
+Approach 3 : reverse the parts and rotate
+
+
+
+
+Peak Element
+
+Approach 1 : TC : O(n)
+for(int i = 1; i < n - 1; i++) {
+	if(arr[i] >= arr[i-1] && arr[i] >= arr[i+1]) {
+		return i;
+	}
+}
+
+
+Approach 2 : TC : O(logn) - Use divide and conquer
+
+- find mid element and check if mid element is peak or not
+- if mid element is not peak element then check if element on right side is greater than the middle element than there is always a peak element on right side..
+- if element on left side is greater than the middle element than there is always a peak element on left side
+- it will form a recursion
+
+
+void findPeak() {
+  int mid = low + (high - low) / 2
+
+  if((mid == 0 || arr[mid - 1] <= arr[mid]) && (mid == n-1 || arr[mid + 1] <= arr[mid]))
+  {
+     return mid;
+  }
+
+  else if(mid > 0 && arr[mid - 1] > arr[mid]) {
+	return findPeak(arr, low, mid-1, n);
+  }
+
+  else  {
+	return findPeak(arr, mid+1, high, n);
+  }
+
+}
+
+
+
+Last One
+arr = [0,1,1,1,0,1,1,0,0,1,0,1,1,0]
+o/p = 12
+
+
+Best time to buy and sell stock
+
+arr = [2,4,7,1,5,11,13]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
