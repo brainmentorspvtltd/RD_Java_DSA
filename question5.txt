@@ -1,0 +1,15 @@
+Q1 Find the Sum of Numbers B/w 1 to N, Using Recursion
+Input : 10
+Output : 55
+
+
+Q2.  Given a Number N , Your Task is to print all the Even number B/w 1 to N , Using Recursion
+
+Q3. Given two numbers , Find the GCD of these two numbers recursively.
+
+Q4. Given is Decimal number, Convert Decimal Number to Binary Recursively.
+
+Q5. Crack a Password, Given a password length , the number can be 0 to 9
+e.g password length is 2 so password can be 11 to 99.
+e.g password length is 3 so password can be 100 to 999
+Maximum Password length is 4.
