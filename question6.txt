@@ -1,0 +1,28 @@
+Q1. WAP to print all permutations of a given string
+input :abc
+output : [abc,acb,bac,bca,cab,cba]
+
+
+Q2. WAP to do the Bubble Sort Recursively
+input: [10,30,20,50]
+output: [10,20,30,50]
+
+Q3. Print the Following Pattern Recursively
+A
+BB
+CCC
+DDDD
+EEEEE
+
+Q4. Print the Following Pattern Recursively
+1
+23
+456
+78910
+
+Q5. Print the following Pattern Recursively
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
