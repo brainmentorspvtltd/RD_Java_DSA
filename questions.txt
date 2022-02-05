@@ -1,62 +1,1834 @@
-Q1. Write a program to calculate the sum of following series where n is input by user. 
-1 + 1/2 + 1/3 + 1/4 + 1/5 +…………1/n 
+Problem 1 Make a Number
+Title Make a Number
 
-Q2. Print the Pattern
-**********
-**********
-**********
-**********
+Statement Given a string consisting of digits and alphabets. Extract the digits from
+the string and form a number and print it.
 
-Q3. Print the Multiplication Table from 1 to N
-1x1 = 1, 2x1 = 2, 3x1 = 3, 4x1 = 4, 5x1 = 5, 6x1 = 6, 7x1 = 7, 8x1 = 8
-...
-1x10 = 10, 2x10 = 20, 3x10 = 30, 4x10 = 40, 5x10 = 50, 6x10 = 60, 7x10 = 70, 8x10 = 80
+Input Format:
+Single line of string.
 
+Output Format:
+An integer.
 
-Q4. Write a  program to find the Armstrong number for a given range of number. 
-Test Data :
-Input starting number of range: 1
-Input ending number of range : 1000
-Expected Output :
-Armstrong numbers in given range are: 1 153 370 371 407
+Sample Input:
+a3h0uy48==8$uss1 nj29
 
+Sample Output: 0
+30488129
 
-Q5. Write a Program to print the Prime number b/w Given Range 
-1 to N
+Input b37dk28sh2
+abdhskdn3abdhskdn12
+0c0b
+0m8n
+a3h0uy48==8$uss1 nj29a3h0uy48==8$uss1 nj29
 
-
-Q6. Write a  program to find HCF (Highest Common Factor) of two numbers.
-Test Data :
-Input 1st number for HCF: 24
-Input 2nd number for HCF: 28
-Expected Output :
-HCF of 24 and 28 is : 4
-
-Q7. Write a program  to find LCM of any two numbers.
-Test Data :
-Input 1st number for LCM: 15
-Input 2nd number for LCM: 20
-Expected Output :
-The LCM of 15 and 20 is : 60
+Output 37282
+312
+0
+8
+3048812930488129
 
 
-Q8. Write a  program to find out the sum of an A.P. series.
-Test Data :
-Input the starting number of the A.P. series: 1
-Input the number of items for the A.P. series: 10
-Input the common difference of A.P. series: 4
-Expected Output :
-The Sum of the A.P. series are :
-1 + 5 + 9 + 13 + 17 + 21 + 25 + 29 + 33 + 37 = 190
+
+Variant 1.1 Digit Code
+Title Digit Code
+
+Statement Given two strings containing digits, alphabets and special characters.
+Generate a digit code by extracting the digits from the strings such that
+the digit code has a digit from the first string followed by the digit from the
+second string.
+
+Input format:
+Two lines having one string each.
+
+Output format:
+Integer in a single line.
+
+Sample input:
+a0b1$c3d4x8
+b2c9*t7
+
+Sample output:
+02193748
+
+Input 
+b1n2m3
+b5j6k7
+&6)9B6gdjsonc))0
+1bc2
+0bm8
+ncjdns0esncbcdy1bhdheu2847%^&*(3
+0g0n0d0g0g
+1*1(1H1&
+ 
+  
+a0b1$c3d4x8-23
+b2c9*t7
+
+Output 
+152637
+619260
+8128473
+10101010
+219374823
+Sol myStr1 = input()
+myStr2 = input()
+nums1 = list(filter(lambda item: item.isdigit(), myStr1))
+nums2 = list(filter(lambda item: item.isdigit(), myStr2))
+ans = ''
+for i in range(min(len(nums1), len(nums2))):
+ans += nums1.pop(0)
+ans += nums2.pop(0)
+ans += ''.join(nums1) if len(nums1) > 0 else ''.join(nums2)
+print(int(ans))
 
 
-Q9. Write a program  to convert a decimal number into octal number.
-Test Data :
-Enter a number to convert : 79
-Expected Output :
-The Octal of 79 is 117
+DL 1
+Variant 1.2 This or That
 
-Q10. Print the Second Smallest Number , From Given 3 Numbers
-Input : 10,40,20
-Output : 20
+Title This or That
+Statement Given an alphanumeric string having alphabets, digits and some special
+characters. Extract the special characters from the string and print them if
+the sum of the digits is less than a number M otherwise print the alphabets
+in uppercase.
 
+Input format:
+First line will have a string and the second line will have the value of M.
+
+Output format:
+String in a single line.
+Sample input:
+n3*o3(bo7%g6h)a*1
+52
+
+Sample output
+*(%)*
+
+Input 
+1q2w3e4r&*nh#$
+89
+
+n3*o3(bo7%g6h)a*1
+10
+
+d9fj30ks74f,3 4
+4
+
+1234bnhgyio^&W*#((#
+100
+
+&*#^#b38dkfcnH*sjsHJDHDGDJD
+3
+
+Output 
+&*#$
+
+NOBOGHA
+
+DFJKSF
+
+^&*#((#
+
+BDKFCNHSJSHJDHDGDJD
+
+Sol inp1 = input()
+inp2 = int(input())
+alphabets, specials = '', ''
+total = 0
+for i in range(0, len(inp1)):
+if inp1[i].isdigit():
+total += int(inp1[i])
+elif inp1[i].isalpha():
+alphabets += inp1[i].upper()
+else:
+specials += inp1[i]
+if total < inp2:
+print(specials)
+else:
+print(alphabets)
+DL 1
+Problem 2 Reverse Palindrome
+  
+Title Reverse Palindrome
+Statement Check whether a given number is a palindrome or not. Print the number, if
+it is a palindrome, otherwise add the number to its reverse and perform
+this operation until it becomes a palindrome.
+
+Input format:
+An integer in a single line
+
+Output format:An integer in a single line.
+
+Sample Input:
+195
+
+Sample Output:
+9339
+
+Input 
+20
+267
+13
+121
+11
+
+Output 
+22
+13431
+44
+121
+11
+
+Sol def palindrome(s):
+return s == s[::-1]
+def reverse(s):
+return s[::-1]
+num = int(input())
+while(not palindrome(str(num))):
+num = num + int(reverse(str(num)))
+ 
+  
+print(num)
+DL 1
+
+Problem 3 String Rotate Multiple
+Title String Rotate Multiple
+
+Statement There are a number of space separated strings. Each string is in the form
+of, alphabet:number. From each string extract the number and rotate the
+string rightwards if the number is even or leftwards if the number is odd.
+The rotation should be by as many places as the extracted number.
+If input is not valid print -1.
+
+Input format:
+Space separated strings in a single line.
+
+Output format:
+Multiple lines of output, each line having a single string.
+
+Sample input:
+hello:11 card:26
+
+Sample output:
+elloh
+rdca
+
+Input 
+titusn:014 lotus:3
+
+tsipuktionyretwhfgahxsnjnxsj:26989 cndkjrfwehhjencmndjhjvnjbhd:775
+
+quickbrownfoxjumpsoverthelazydogs:1368 humptydumpty:246718
+
+sdgdgfdfadfhaskldhfklshd:-29 dhlfkhglkdhfgkhdkfgddfjg:4880
+
+agjksdgjkgasdjkjSGDJGj:-19 hskldhfkhfhxkhdkh:-32
+
+Output 
+sntitu
+uslot
+xsjtsipuktionyretwhfgahxsnjn
+hjvnjbhdcndkjrfwehhjencmndj
+overthelazydogsquickbrownfoxjumps
+mptydumptyhu
+ 
+  
+-1
+kfgddfjgdhlfkhglkdhfgkhd
+-1
+-1
+Sol 
+def leftRotation(s, d):
+    return s[d%len(s):] + s[:d%len(s)]
+
+def rightRotation(s, d):
+    return s[len(s) - d%len(s):] + s[:len(s) - d%len(s)]
+
+myList = [i.split(":") for i in input().split()]
+for i in range(len(myList)):
+if int(myList[i][1]) < 0:
+print(-1)
+elif int(myList[i][1]) % 2 == 0:
+print(rightRotation(myList[i][0], int(myList[i][1])))
+else:
+print(leftRotation(myList[i][0], int(myList[i][1])))
+
+DL 2
+Variant 3.1 String Rotate
+Title String Rotate
+
+InfyTQ 2019, 2020 and sample paper
+
+Statement There are a number of space separated strings. Each string is in the form
+of the alphabet:digits. From each string, find the sum of squares of the
+digits. If the sum is even then rotate the alphabets of that string one place
+to right and print those alphabets after rotation. If the sum is odd then
+rotate the alphabets two places to the left and print the alphabets after
+rotation. If there is a negative value after the colon print -1 instead.
+
+Input format:
+Space separated strings in a single line.
+
+Output format:
+Multiple lines of output, each line having a single string.
+
+Sample input:
+hello:11 card:23
+
+Sample output:
+ohell
+ 
+  
+rdca
+Input Locus:156 Roveg:-1
+Locus:0
+Locs:123 Speaker:982131981232123231
+string:142
+titusn:014 lotus:3410
+Output sLocu
+-1
+sLocu
+sLoc
+eakerSp
+ringst
+tusnti
+slotu
+Sol def leftRotation(s, d):
+return s[d:] + s[:d]
+def rightRotation(s, d):
+return s[len(s) - d:] + s[:len(s) - d]
+myList = [i.split(":") for i in input().split()]
+for i in range(len(myList)):
+if int(myList[i][1]) < 0:
+print(-1)
+else:
+sumsq = 0
+for j in myList[i][1]:
+sumsq += int(j) ** 2
+if sumsq % 2 == 0:
+print(rightRotation(myList[i][0], 1))
+else:
+print(leftRotation(myList[i][0], 2))
+DL 2
+Variant 3.2 Jumbled Rotate
+ 
+Title Jumbled Rotate
+
+Statement You are given a set of strings consisting of digits, alphabets and special
+characters. From each string extract the digits, find their sum and square
+it. If the resultant number is odd, perform as many left rotations else
+perform as many right rotations.
+
+Input format:
+Multiple strings in a single line separated by space.
+
+Output format:
+For each string there should be one output string. All the strings should be
+in a single line separated by space.
+
+Sample input:
+Lo3us02 flo2at1er
+
+Sample output:
+ousL oaterfl
+
+Input tre56try 567tew6 65ty89 8tw 755858858u 23hdg74748
+qwertyqwertyqwerty alphabeta gamma gammaalpa
+quickfox23highjump theshowmustgoon
+7LhV7G!m_rMhb2rsLWHk7F@Kn@6L3nt*6CeqVyChQDWkxFp38wJpCe
+VB9tg7HZf.AsAbxXxUXJLuGYXJC!EjD_yRoL3kR!pRxwwH
+7LhV7G!m_rMhb2rsLWHk7F@Kn@6L3nt*6Ce657484qVyChQDWkxFp38
+wJpCeVB9tg7HZf.AsAbxXx37383UXJLuGYXJC!EjD_yRoL3kR!pR87383x
+wwH
+1463739d6892@47 14637396892@47897439534976
+
+Output retryt tew ty tw u dgh
+qwertyqwertyqwerty alphabeta gamma gammaalpa
+ighjumpquickfoxh theshowmustgoon
+wJpCeVBtgHZf.AsAbxXxUXJLuGYXJC!EjD_yRoLkR!pRxwwHLhVG!m_r
+MhbrsLWHkF@Kn@Lnt*CeqVyChQDWkxFp
+hVG!m_rMhbrsLWHkF@Kn@Lnt*CeqVyChQDWkxFpwJpCeVBtgHZf.AsA
+bxXxUXJLuGYXJC!EjD_yRoLkR!pRxwwHL
+@d @
+ 
+  
+Sol 
+def leftRotation(s, d):
+    return s[d % len(s):] + s[:d % len(s)]
+def rightRotation(s, d):
+    return s[len(s) - d % len(s):] + s[:len(s) - d % len(s)]
+def fun(string):
+rotateBy = 0
+rotateString = ''
+for ch in string:
+if ch.isdigit():
+rotateBy += int(ch)
+else:
+rotateString += ch
+if (rotateBy ** 2) % 2 == 0:
+return rightRotation(rotateString, rotateBy ** 2)
+else:
+return leftRotation(rotateString, rotateBy ** 2)
+allStrings = input().split()
+for string in allStrings:
+print(fun(string), end = ' ')
+
+DL 2
+
+Problem 4 Frequency Priority Sort
+Title Frequency Priority Sort
+
+Statement There are 5 types of tasks (represented by the alphabets, A, B, C, D and
+E). You are given a string representing a job consisting of some
+combination of these tasks. You are also given priorities of these tasks
+(represented by integers). Rearrange the given string according to the
+priority of the task (highest should come first), followed by frequency of the
+task (lowest should come first), followed by the dictionary order.
+
+Input format:
+Two lines of input. The first line will have a string consisting of some
+combination of A, B, C, D and E. The second line will have 5 space
+separated integers. Note: Smaller the number, higher is its priority.
+
+Output format:
+Single line of output consisting of some combination of A, B, C, D and E.
+Sample input:
+ABCDBCDE
+1 1 2 2 3
+A B C D E
+
+Sample output :
+ABBCCDDE
+
+Input 
+AABBCDDDDEEBBAACCDEAAA
+2 1 3 4 5
+A B C D E
+
+ABCDE
+2 2 2 2 2
+
+CDEBACBEDCBACEAAAAABBBBCDCDCD
+5 4 3 2 3
+
+BBBEEECCDDA
+1 3 2 2 3
+
+Output 
+BBBBAAAAAAACCCDDDDDEEE
+ABCDE
+DDDDDEEECCCCCCCBBBBBBBAAAAAAA
+ACCDDBBBEEE
+
+Sol def sortString(string, prio):
+freq = dict()
+for ch in string:
+if ch not in freq:
+freq[ch] = 1
+else:
+freq[ch] += 1
+tripList = []
+for item in freq.items():
+priority = prio[ord(item[0]) - ord('A')]
+frequency = item[1]
+myself = item[0]
+mytuple = (priority, frequency, myself)
+tripList.append(mytuple)
+tripList.sort()
+ans = ''
+ 
+  
+for trip in tripList:
+ans += trip[2] * trip[1]
+return ans
+myString = input()
+priority = list(map(int, input().split()))
+print(sortString(myString, priority))
+DL 3
+
+
+Variant 4.1 Frequency Sort Backward
+Title Frequency Sort Backward
+
+Statement Given a set of strings. Each string consists of small case alphabets. Sort
+each string in the increasing order of the frequency of characters. If the
+frequency of two characters is the same, the character coming LATER in
+lexicographical order should come first.
+
+Input format:
+Multiple strings in a single line separated by space.
+
+Output format:
+Multiple strings in a single line separated by space.
+
+Sample input:
+little kettle
+
+Sample output:
+iettll lkttee
+
+Input 
+aabbccddee pqrpqrpqr
+zyxabc temple torque
+Jdsbhchs bxsahybasyg uawjxasknhxcb ysabgchbcdhy sabhcjshdbchdgv
+hjasbxbc aygbx uayikiakaiia iaiaiaiaiai hnchcbdbchdy sbccdbgcgdv
+1234567 9876432 22646646464 99173737782 7261661616 48994994
+
+Output 
+eeddccbbaa rrrqqqppp
+zyxcba tpmlee utrqoe
+dcbJsshh xhgyyssbbaa wusnkjhcbxxaa sgdayyhhccbb vjgassddccbbhhh
+xsjhcabb yxgba yukkiiiiaaaa aaaaaiiiiii ynddbbhhhccc vsggddbbccc
+ 
+  
+7654321 9876432 22444466666 82199337777 7211166666 84449999
+Sol def sortString(string):
+freq = dict()
+for ch in string:
+if ch not in freq:
+freq[ch] = 1
+else:
+freq[ch] += 1
+allPairs = [(item[1], 500 - ord(item[0])) for item in freq.items()]
+allPairs.sort()
+ans = ''
+for pair in allPairs:
+ans += chr(500 - pair[1]) * int(pair[0])
+return ans
+myList = list(input().split())
+for item in myList:
+print(sortString(item), end = ' ')
+
+DL 2
+Variant 4.2 Frequency Sort Forward
+Title Frequency Sort Forward
+
+Statement Given a set of strings. Each string consists of small case alphabets. Sort
+each string in the increasing order of the frequency of characters. If the
+frequency of two characters is the same, the character coming EARLIER in
+lexicographical order should come first.
+
+Input format:
+Multiple strings in a single line separated by space.
+
+Output format:
+Multiple strings in a single line separated by space.
+
+Sample input:
+abbaccde bdettytbe
+
+Sample output:
+deaabbcc dybbeettt
+Input mmppppggaaajjjnnnabbaccde bdettytbedhdhdhd yyhhjjggkkwwppllaahhyyt
+a1212k 5b45p5454
+111222333 858585 667766232356565 09090901010101
+ 
+  
+5 a 7 h d 0
+mmmmkasnncjdsiuenvduisvnnnnn ppppqqkacmkasincjdhdbvhbfvqq
+uuuunjhbgnjgnhbnghbfvbhjuuuuvvvvvv
+uahnhsyjzhsucjuydhysuzbchysdubhjdbhxjxhdsyudxvyhxvxbhysvy
+Output debbccggmmjjjnnnppppaaaaa ybbeehhhtttddddd taaggjjkkllppwwhhhhyyyy
+ak1122 bp4445555
+111222333 555888 223377555666666 99911110000000
+5 a 7 h d 0
+acejkddiiuuvvsssmmmmnnnnnnnn fijmnsaabbccddhhkkvvppppqqqq
+fgggjjjbbbbhhhhnnnnvvvvvvvuuuuuuuu
+ancczzvvvbbbbjjjjdddddxxxxxssssssuuuuuuyyyyyyyyhhhhhhhhhh
+Sol def sortString(string):
+freq = dict()
+for ch in string:
+if ch not in freq:
+freq[ch] = 1
+else:
+freq[ch] += 1
+allPairs = [(item[1], item[0]) for item in freq.items()]
+allPairs.sort()
+ans = ''
+for pair in allPairs:
+ans += pair[1] * int(pair[0])
+return ans
+myList = list(input().split())
+for item in myList:
+print(sortString(item), end = ' ')
+DL 2
+
+
+Problem 5 Largest Even Number
+Title Largest Even Number
+InfyTq 2020
+ 
+  
+Statement From a given alphanumeric string extract all the digits, remove duplicate
+digits, and from that set of digits construct the largest even number
+possible. The input string is guaranteed to have at-least one even digit.
+
+Input Format:
+An alphanumeric string in a single line.
+
+Output Format:
+An integer number in a single line.
+
+Sample Input:
+a2b4c6d4
+
+Sample Output:
+642
+
+Input 
+0ndjn8nk9nkn9b6wj5ndwk6nwk7nwk8mwl0mw1nk9nej8nwn9nejn6nkwn5
+
+hxbhbh0bsdhb0mnsbh0bhjb0djshb0
+
+dnk6nk9nk4nkn6nk8nn4nk2nnj1
+
+fnfjn1jbnjbj1jb1hb1h1b1hb1hbv1h1v1h1vh1vhb2hb2hh2vhj2vh2vh2v2hv22
+h2vh2v
+
+1114145517173794848758567857585785758
+Output 
+9876510
+0
+986412
+12
+98765134
+Sol string = input()
+digits = set()
+for ch in string:
+if ch.isdigit():
+digits.add(ch)
+digitsAsList = list(digits)
+digitsAsList.sort(reverse = True)
+if int(digitsAsList[-1])%2 != 0:
+for i in range(len(digitsAsList) - 2, -1, -1):
+ 
+  
+if int(digitsAsList[i])%2 == 0:
+digitsAsList.append(digitsAsList.pop(i))
+break
+print(''.join(digitsAsList))
+DL 2
+
+
+Variant 5.1 Prime Number in Alphanumeric String
+Title Prime Number in Alphanumeric String
+
+Statement From a given alphanumeric string extract all the digits, remove duplicate
+digits (remove the later appearances of the digit) and from this set of digits
+construct a number. The digits in the formed number should maintain their
+positions relative to each other. Finally, check whether the number thus
+formed is prime or not.
+
+Input Format:
+An alphanumeric string in a single line.
+
+Output Format:
+True if the formed number is prime False otherwise.
+
+Sample Input:
+a2b4c6d4
+
+Sample Output:
+False
+
+Input 
+uwehujh25372898hu9hjj19
+
+2238776@%#^$&%fghj!3498ghiuyt@@%%ADGHV01212111$&^%
+
+bsjkb2njkhskjd2jbjbs6kjsnbkjs9sjkbsjhbhjs9jkbszhjb2bsxhk6hjbhx9zsjbxhjs
+bhjbxdhbgx6szjhbsvhgxv2
+
+mnsjnzs4kzxklnzxkn0zjkbxzjb4zsnjkxznjk0xzhjbxhjb9xjzhbshbshbvh3zxhb
+hjxzbbxzjbxhjbxh0xnjxnjbxj9bzxhbzxhbxhvhsgtyfs3xhzbhxbhjxb3xzhxbhjbs
+hb4
+
+nxnxzuhszjnzs9zjklznxksmklaopsak0zxmknzsjn8zxnklnzk9jxnzb
+jknzbxjk0nxzjkt6hxb
+
+hjx6xnjkksz7hsbzys4rxzcx453tvxhjbzsyuhu89278368jxkhuiwy8whxkdj8uw
+3uy37y93i3sjkhs7suijii
+
+Output 
+False  
+False
+True
+True
+False
+Sol import math
+def isPrime(n):
+for i in range(2, int(math.sqrt(n)), 1):
+if n % i == 0:
+return False
+return True
+myStr = input()
+number = ''
+allDigits = []
+for ch in myStr:
+if ch.isdigit() and ch not in allDigits:
+number += ch
+allDigits.append(ch)
+print(isPrime(int(number)))
+DL 2
+
+Variant 5.2 Sort Digits in Alphanumeric String
+Title Sort Digits in Alphanumeric String
+
+Statement Given a string consisting of digits, alphabets and special characters.
+Modify the string by sorting the digits (increasing order) and print the
+modified string.
+
+Input Format:
+An alphanumeric string in a single line.
+
+Output Format:
+An alphanumeric string in a single line.
+
+Sample Input:
+a2b4c60d4
+
+Sample Output:
+a0b2c44d6
+ 
+  
+Input 
+456@$%fsdgfh$%^ucbvnbmn4erytui34567!@%#^&cvbnm5467sfdghjFD1234
+076543556TFHCNBVM,MN
+98765432QWERTYUI!@#@$%#3456789VCXZREDFCV123456VCBNM,%$^Z7S
+86D9UOL
+shszj8njnz9njzsnj99nknsak89nkan
+zxcvbnwertyui#$W%64s75d869708xcvbnmn1234567890dfgh987654
+23456789msdf345678cbv
+Output 012@$%fsdgfh$%^ucbvnbmn3erytui33444!@%#^&cvbnm4445sfdghjFD5555
+566666777TFHCNBVM,MN
+12233344QWERTYUI!@#@$%#4555666VCXZREDFCV677788VCBNM,%$^Z8S
+99D9UOL
+shszj8njnz8njzsnj99nknsak99nkan
+zxcvbnwertyui#$W%00s12d344455xcvbnmn5666677778dfgh888999
+23344556msdf677889cbv
+Sol myStr = input()
+allDigits = []
+for ch in myStr:
+if ch.isdigit():
+allDigits.append(ch)
+allDigits.sort(reverse = True)
+strAsList = list(myStr)
+for i in range(len(strAsList)):
+if strAsList[i].isdigit():
+strAsList[i] = allDigits.pop()
+print(''.join(strAsList))
+DL 2
+
+
+Problem 6 Extract and Rotate
+Title Extract and Rotate
+
+Statement Given a string consisting of alphabets and few continuous stretches of
+digits. One continuous stretch of digit should be considered as one
+number. Extract all such numbers from the alphanumeric string. Find out
+the difference between the largest and the smallest number and rotate the
+remaining string leftwards by as many times.
+
+Sample Input:
+abc23gh12trpo29rtq2
+
+abcghtrportq
+
+Sample Output:
+ghtrportqabc
+
+Input 
+jgi4654nknnnnkj9jhe103i93hbhbh4u4njj463y jbjb584i4fjfrjbf90
+090hyg890vhg456jnbju2gv6hhi8kjkgf5bj568ghbvhijhk987
+456jhbhfdrdtf89bhju354hjnk789nmnkm0u78bjbjh0hgtr5uyhiju98jknj4#fhg#
+a3fhg8hi%Z&^9
+47687908098-977655354657687989
+guhii0hhuh0hhui0jhk#%^nlkl0
+
+Output 
+ihbhbhunjjy jbjbifjfrjbfjginknnnnkjjhe
+bvhijhkhygvhgjnbjugvhhikjkgfbjgh
+mubjbjhhgtruyhijujknj#fhg#afhghi%Z&^ jhbhfdrdtfbhjuhjnknmnk
+-
+guhiihhuhhhuijhk#%^nlkl
+Sol def leftRotation(s, d):
+return s[d%len(s):] + s[:d%len(s)]
+myStr = input()
+remStr = ''
+numbers = []
+tempNumber = ''
+for ch in myStr:
+if ch.isdigit():
+tempNumber += ch
+elif len(tempNumber) > 0:
+numbers.append(int(tempNumber))
+tempNumber = ''
+remStr += ch
+else:
+remStr += ch
+if len(tempNumber) > 0:
+ 
+  
+numbers.append(int(tempNumber))
+print(leftRotation(remStr, max(numbers) - min(numbers)))
+DL 3
+Variant 6.1 Recreate Sorted Chunks
+Title Recreate Sorted Chunks
+Statement A string is made-up of many smaller substrings, where each substring has
+one continuous span of alphabets followed by one continuous span of
+digits. The span of digits should be considered as one single number. This
+number denotes the importance of the span of alphabets which preceded
+the number.
+You are given such a string. Form another string consisting of only the
+alphabet spans of the given string but rearranged in the increasing order
+of their importance.
+Sample Input:
+abc23gh12trpo29rtq2
+Sample Output:
+rtqghabctrpo
+Explanation. The importance of rtq is 2, which is lowest and hence rtq
+should come first. The importance of gh is 12, which is second lowest and
+hence gh should come second. And so on.
+Input ejejekjd5858dnkdnkdn8dkd9dknjkn546sjnjsn7nsjns90jdbbj35cdnjn20
+ab20bc20bnm20yun20enj20
+a20b20z20b34
+2345678910273
+sndjnj90jbfbds15jdn98dsnjn45jdn20dd12
+Output sjnjsndnkdnkdndkdcdnjnjdbbjnsjnsdknjknejejekjd
+abbcbnmenjyun
+abzb
+ 
+  
+ddjbfbdsjdndsnjnsndjnjjdn
+Sol myStr = input()
+strings, numbers = [], []
+tempNumber, tempString = '', ''
+for ch in myStr:
+if ch.isdigit():
+tempNumber += ch
+if len(tempString) > 0:
+strings.append(tempString)
+tempString = ''
+else:
+tempString += ch
+if len(tempNumber) > 0:
+numbers.append(int(tempNumber))
+tempNumber = ''
+if len(tempNumber) > 0:
+numbers.append(int(tempNumber))
+if len(tempString) > 0:
+strings.append(tempString)
+combined = list(zip(numbers, strings))
+combined.sort()
+print(''.join([pair[1] for pair in combined]))
+DL 3
+Variant 6.2 Rotate Me
+Title Rotate Me
+Statement An alphanumeric string consists of alphabets and digits. You are given an
+alphanumeric string and a number M. Form numbers having M digits by
+picking digits from this string from left to right. Find the largest of these
+numbers and rotate the remaining string (the original string with digits
+stripped off) towards right by as many times. It is guaranteed that the
+number of digits in the given alphanumeric string will be multiples of M.
+Input format:
+Each input consists of an alphanumeric string and the value of M
+separated by space.
+Output format:
+String in a single line.
+Sample Input:
+abc23gh12trpo2912rtq 2
+ 
+  
+Sample Output:
+portqabcghtr
+Input abc2345cde6789 2
+abvc234567hdsihds675bhdb234kjdshj102400 3
+hcjhecjnedk1jcknkcenk2ncknvkn8nvrkjnjk9bdejn778ncmnme9 1
+hdeh000jdbcbh000nbcdk000000 3
+324784r87984398033487746736183783790489849845758754894 2
+Output bccdea
+shjabvchdsihdsbhdbkjd
+ejnncmnmehcjhecjnedkjcknkcenkncknvknnvrkjnjkbd
+hdehjdbcbhnbcdk
+r
+Sol def rightRotation(s, d):
+return s[len(s) - d%len(s):] + s[:len(s) - d%len(s)]
+myStr, M = input().split()
+M = int(M)
+numbers = []
+tempNumber = ''
+tempString = ''
+remStr = ''
+for ch in myStr:
+if ch.isdigit():
+tempNumber += ch
+else:
+tempString += ch
+if len(tempNumber) == M:
+numbers.append(int(tempNumber))
+tempNumber = ''
+print(rightRotation(tempString, max(numbers)))
+DL 3
+ 
+  
+Problem 7 What's the code?
+Title What's the code?
+Generate a N digit access code from the given numeric employee code.
+The process to generate the N digit access code is as follows.
+Concatenate the number formed by adding the sum of the squares of the
+digits at the even index places and the sum of digits at the odd index
+places. The last N digits of this number will be the access code. Print - 1,
+if you are unable to generate N digit access code.
+Input Format:
+Two space separated integers.
+Output Format:
+An integer.
+Sample input:
+12345467 3
+Sample Output
+117
+Input 3456378 6
+38763487438 3
+4849987836848695 4
+36537689898020939788 5
+72764355679098725681928926878908687576475974675379587864387
+3845767 6
+Output -1
+128
+8054
+50551
+379188
+Sol myStr, N= input().split()
+N = int(N)
+ 
+  
+evenSquareSum = 0
+oddSum = 0
+for i in range(len(myStr)):
+if i % 2 == 0:
+evenSquareSum += int(myStr[i]) ** 2
+else:
+oddSum += int(myStr[i])
+joinedNumber = str(evenSquareSum) + str(oddSum)
+if len(joinedNumber) < N:
+print(-1)
+else:
+print(joinedNumber[len(joinedNumber) - N:])
+DL 2
+Variant 7.1 Generation of OTP
+Title Generation of OTP
+Statement Generate a 4 digit OTP from a given number. The process to generate the
+OTP is as follows. Starting from the first position, generate a 4 digit OTP
+by concatenating the squares of these digits..
+Input Format:
+An integer number.
+Output Format:
+A 4 digit integer number.
+Sample Input
+4365188
+Sample Output
+1693
+Input 123456
+12907
+9876
+12877
+12387
+Output 1491
+ 
+  
+1481
+8164
+1464
+1496
+Sol myStr = input()
+otp = ''
+for ch in myStr:
+otp += str(int(ch)**2)
+if len(otp) == 4:
+print(otp)
+elif len(otp) > 4:
+print(otp[:4])
+DL 1
+Variant 7.2 The Hash Code
+Title The Hash Code
+Statement Students require a hashcode (which depends upon their roll number) to
+enter the library. Generate the hashcode from the given roll number. The
+process to generate the hash code is given below.
+The hashcode is generated by concatenating the first alphabets of the
+digits at even places spelled in words and the last alphabets of the digits
+at odd places spelled in words. To this branch code is suffixed and the id
+number of the student is prefixed.
+The roll number of the student consists of the LastTwoDigitsofCurrentYear
+followed by ThreeDigitCollegeCode followed by TwoDigitBranchCode
+followed ThreeDigitIDNumber.
+Input format:
+An integer number.
+Output format:
+Single line of alphanumeric string.
+Sample input:
+2118523112
+Sample output:
+ 
+  
+23toftoetoeo112
+Explanation:
+The given roll number is 2118523112. The first alphabet of the digits at
+even places spelled in words is tofto. And the last alphabet of the digits at
+odd places spelled in words is etoeo. Concatenating them we get
+toftoetoeo. Prefixing the branch code and suffixing the id number we get
+23toftoetoeo112.
+Input 5768794553456788997675646
+78764557698776544346578988756347567876545567678
+56789876543567898765678654356432456546786897654678765432145
+678
+64785468375878265263487777638927287574689762517368967857438
+687658743665234564
+6843972856218735168734957943965217238945673962718937
+Output 94fssfffsenssssnteeeentexer646
+55ssffsesffffeessffssffssetxenenxrexneteenxtxrenn678
+87fsnsftseesseftstfsfssnsfssftofsxttxrenenenxreroeexttnextxrorxt678
+46ssfstfstfsfsssettsssnsfssnsffeesefsftffrtrtnttxoetnneentertnoeetxtnexnen
+exorx564
+72sfntftetoetnsfnfotefstssettentxenexnreeexoneeeneoeen937
+Sol numInWords = {0:'zero', 1:'one', 2:'two', 3:'three',
+4:'four', 5:'five', 6:'six', 7: 'seven', 8:'eight',
+9:'nine'}
+myStr = input()
+one, two = '', ''
+for i in range(len(myStr)):
+if i % 2 == 0:
+one += numInWords[int(myStr[i])][0]
+else:
+two += numInWords[int(myStr[i])][-1]
+print(myStr[5:7] + one + two + myStr[-3:])
+DL 2
+ 
+  
+Problem 8 Reverse a String
+Title Reverse a String
+Statement You are given a string consisting of alphabets, digits and special
+characters. You are asked to reverse the string while maintaining the
+location of all the special characters. The input string is guaranteed to
+have at-least one character.
+Input format:
+Single line of alphanumeric string.
+Output format:
+Single line of alphanumeric string.
+Sample input:
+sd&hg#j
+Sample output:
+jg&hd#s
+Input abc@rty4hjh@###jkkkk67gh
+@@@@abcde()*&a345#njndkn
+huggjbuhuhjniuhhjhuhjbhfgvbj
+kok6878%^&bnmbu58798!@%uuuihuty78989755rfghvuiy786&*
+#%*&^#@!#@&**&^7890890
+Output hg7@6kkkkjh@###jh4ytrcba
+@@@@nkdnj()*&n543#aedcba
+jbvgfhbjhuhjhhuinjhuhubjgguh
+687yiuv%^&hgfr557989!@%87ytuhiuuu89785ubmnb8786kok&*
+#%*&^#@!#@&**&^0980987
+Sol myStr = input()
+regChars = []
+specChars = []
+for i in range(len(myStr)):
+if myStr[i].isalnum():
+regChars.append(myStr[i])
+ 
+  
+else:
+specChars.append((myStr[i], i))
+regChars.reverse()
+for pair in specChars:
+regChars.insert(pair[1], pair[0])
+print(''.join(regChars))
+DL 2
+Variant 8.1 Rotate the String
+Title Rotate the String
+You are given a string (consisting of alphabets, digits and special
+characters) and a positive integer M. Rotate the string rightwards by M
+places, while maintaining the location of all the special characters. The
+input string is guaranteed to have at-least one character.
+Input format:
+Single line of alphanumeric string.
+Output format:
+Single line of alphanumeric string.
+Sample input:
+abcd@efg 2
+Sample output:
+fgab@cde
+Input abgt%67#djdecnjcen^&*(hjahs 5
+edij%&*^(jf9489869uirjfiGJHVhbjn&(*() 7
+43098ighhv8u4fuh48()*()netvthnn 19
+8494djbjeb$^%8t&hjsxn*((&hsxj*(bdecj*() 190
+swjijivjgtinjjknkekjrolekekkd 90
+Output hjah%sa#bgt67djdec^&*(njcen
+JHVh%&*^(bjnedijjf9489869uirjfiG&(*()
+hhv8u4fuh48netvthn()*()n43098ig
+sxjbdecj84$^%94&djbje*((&b8th*(jsxnh*()
+ 
+  
+kkdswjijivjgtinjjknkekjroleke
+Sol def rightRotation(s, d):
+return s[len(s) - d%len(s):] + s[:len(s) - d%len(s)]
+myStr, M = input().split()
+regChars = []
+specChars = []
+for i in range(len(myStr)):
+if myStr[i].isalnum():
+regChars.append(myStr[i])
+else:
+specChars.append((myStr[i], i))
+regChars = rightRotation(regChars, int(M))
+for pair in specChars:
+regChars.insert(pair[1], pair[0])
+print(''.join(regChars))
+DL 2
+Variant 8.2 Alternate Exchange
+Title Alternate Exchange
+Statement Given an alphanumeric string which may or may not have special
+characters. Swap each character with its mirror image character. Two
+characters are said to be mirror images of each other if they are
+equidistant from the middle of the string.
+The mirror image character should be decided, ignoring the special
+character. The special characters should retain their original positions in
+the final string. See sample input and output for clarity.
+Input format:
+Single line of alphanumeric string.
+Output format:
+Single line of alphanumeric string.
+Sample input
+abcdkdef*jhkl
+Sample output
+lkhjfedk*dcba
+Explanation:
+ 
+  
+a, b, c, d will be swapped with l, k j and j respectively. k will be swapped
+with f. Note that * has been ignored. Finally d will be swapped with e.
+Input 3&h
+euihdenxski
+^7*^#hdh74
+bdhbdhjdf%^23&*)
+asdsdfvcbfhgj@#%56978!@q254t
+Output h&3
+iksxnedhiue
+^4*^#7hdh7
+32fdjhdbh%^db&*)
+t452q87965jgh@#%fbcvf!@dsdsa
+Sol myList = list(input())
+left, right = 0, len(myList) - 1
+while left < right:
+if myList[left].isalnum() and myList[right].isalnum():
+myList[left], myList[right] = myList[right], myList[left]
+left += 1
+right -= 1
+elif not myList[left].isalnum():
+left += 1
+else:
+right -= 1
+print(''.join(myList))
+DL 2
+Problem 9 Longest Prefix Anagram
+Title Longest Prefix Anagram
+Statement Given two strings, S and T. The task is to find the longest prefix from both
+the strings which are anagrams of each other. Print the longest prefix from
+both the strings. If not possible, print -1.
+ 
+  
+Input format:
+Two space separated strings in a single line.
+Output format:
+Two space separated strings in a single line
+Sample input :
+abaabcdezzwer caaabbttyh
+Sample Output :
+abaabc caaabb
+Input aabcdefgtrhabcc abcdefg
+thisisastring stringisastring
+wertyui wertyuioeruio
+rtedfghkyuityurtdhfcnvmjkutyurtdfhcgv ytdfghjyfhgvbnmgjfhv
+rtyuilkghjfcvjhrtyuihdfgsgfcgvhfghjyerrty
+rtyuilkghjfcvjhrtyuihdfgsgfcgvhfghjyerrty
+Output a a
+-1
+wertyui wertyui
+-1
+rtyuilkghjfcvjhrtyuihdfgsgfcgvhfghjyerrty
+rtyuilkghjfcvjhrtyuihdfgsgfcgvhfghjyerrty
+Sol def isanagram(a,b):
+x = sorted(a)
+y = sorted(b)
+return x==y
+s,t= input().split()
+length= min(len(s),len(t))
+for i in range(length):
+preS= s[0:length-i]
+preT= t[0:length-i]
+if isanagram(preS,preT):
+print(preS,preT)
+break
+ 
+  
+else:
+print(-1)
+DL 3
+Variant 9.1 Find All Anagrams
+Title Find All Anagrams
+Statement Given a word (W) another set of words (S). Print those words from S,
+which are anagram of W. If there are no anagrams of W in S, print -1.
+Input format:
+Two lines of input. The first line will have W and the second line will have
+the set of words (S) separated by space.
+Output format:
+All the words in a single line separated by space.
+Sample input :
+apple
+pple paple lepap papel papwl
+Sample Output :
+paple lepap papel
+Input triangle
+integral triglean gletrian angletri
+metadata
+data meta datam metam datamet metada datamet metadat datamet
+tamarind
+amarind amarindt marinda rindtama india marindta tama marin timid
+diamond mrind timdg adhd egehje aojshd marinda hsjskkd marindta
+hsudsydee
+Sxhjhjzs soijxsd ujhdcb h f yusdbch auyshxbsa uydhcb gyfgv suydhcbyhdb
+yszgchdc atfxtygvsx uidfhcufyd syzgcbd sidjfchiuhfv atsfrsw ikcnjiufvh
+qwerty
+wertyq yhstf ertyqw ydggdg ytrewq twrrrs werqty tsdfdf tyqwer ytdsgsd
+tyqwre reqwty ertyqw qwtyre werqty rtyqwe trewqy rewqyt ewqytr wqytre
+qytrew
+Output integral triglean gletrian angletri
+ 
+  
+-1
+amarindt rindtama marindta marindta
+-1
+wertyq ertyqw ytrewq werqty tyqwer tyqwre reqwty ertyqw qwtyre werqty
+rtyqwe trewqy rewqyt ewqytr wqytre qytrew
+Sol def isAnagram(S, T):
+return tuple(sorted(S)) == tuple(sorted(T))
+W = input()
+S = input().split()
+anagrams = []
+for s in S:
+if isAnagram(W, s):
+anagrams.append(s)
+if anagrams:
+print(*anagrams)
+else:
+print(-1)
+DL 2
+Variant 9.2 Group Anagrams
+Title Group Anagrams
+Given an array of strings. Group the string together, which are anagrams
+and print the size of the largest group.
+An Anagram is a word or phrase formed by rearranging the letters of a
+different word or phrase.
+Input format:
+The single line of input will have the list of words separated by space.
+Output format:
+An integer in a single line.
+Sample input :
+eat tea tan ate nat bat
+Sample Output :
+3
+ 
+  
+Input toe ote apple ete eto leaap tree eert
+arpit rpita rptai atipr ppr rpr rrp prp rqr artip
+learnys learnyst learsny earsnyl synrael
+abcedsr arbdhgf agfdhgj ahdiok pourhrjh hghdvwxnsdkj jfhufhdejb
+gcdygdwujkgnk dchjhcdjncdk jdchidjo
+rat atr tra tra tra rat atr
+Output 3
+5
+4
+1
+7
+Sol def fun(words):
+groups = dict()
+for word in words:
+key = tuple(sorted(word))
+groups[key] = groups.get(key, []) + [word]
+return len(max(groups.values(), key = len))
+print(fun(input().split()))
+DL 2
+Problem 10 Longest Fibonacci Series in an Array
+Title Longest Fibonacci Series in an Array
+InfyTQ. 25 July 2019. Question 2.
+Statement Given space separated numbers as input. Print the longest fibonacci
+sequence that is present in the input. If no such sequence is present print
+-1. A fibonacci sequence is defined as numbers which follow the property
+given below:
+fib[i] = fib[i - 1] + fib[i - 2], for all i > 1
+fib[0] = 0 and fib[1] = 1, for 0 <= i <= 1
+ 
+  
+The fibonacci numbers may not be a contiguous subset of the given
+sequence.
+Input format:
+Space separated numbers.
+Output format:
+Space separated numbers.
+Sample input:
+0 1 2 2 1 2 3 8 5 4 5 6 7 8 9 8
+Sample output:
+0 1 1 2 3 5 8
+Input 3 6 8 10 12 99 45 67
+0 1 2 3 1 2 3 5 4 6 2 3 8 8 9 12 13 15 19 20
+1 2 3 4 0 1 1 3 2 1 5 6 7 8 19 20 13 21 90 33 34 100 20
+1 1 100 99 0 1 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+24
+0 1 1 11 1 1 11111 11111111 222222 4 5 3 2 5 7 8 999 1936567 73673
+413412
+Output -1
+0 1 1 2 3 5 8 13
+0 1 1 2
+0 1 1 2 3 5 8 13 21
+0 1 1 2
+Sol def findelement(mylist, num, start):
+for i in range(start,len(mylist)):
+if mylist[i] == num:
+return i
+return -1
+def longfibo(mylist):
+fiblist = [0]
+zeroindex = mylist.index(0)
+arrindex = findelement(mylist, 1, zeroindex+1)
+ 
+  
+if arrindex == -1:
+return fiblist
+else:
+fiblist.append(1)
+while True:
+fibNo = fiblist[-1] + fiblist[-2]
+arrindex = findelement(mylist, fibNo, arrindex+1)
+if arrindex == -1:
+return fiblist
+else:
+fiblist.append(fibNo)
+mylist = list(map(int, input().split()))
+if 0 not in mylist:
+print(-1)
+else:
+print(*longfibo(mylist))
+DL 2
+Variant 10.1 Power Sequence Ratio
+Title Power Sequence Ratio
+Statement Given space separated numbers as input. Find all the power sequences in
+the input numbers. Power sequence of a number n is defined as n, n
+2
+, n
+3
+,
+n
+4 … n
+k
+. Print the answer in the following format, n:k, where n is the
+number followed by a colon followed by the number of terms in the power
+sequence. Print only if k >= 2. If no such power sequence is present in the
+given input print -1.
+Input Format:
+Space separated integers.
+Output Format:
+Multiple lines of output, each line having one string in the format as
+specified above.
+Sample Input:
+2 6 8 16 5 32 67 128 64 25 36 125
+Sample Output:
+5:3
+6:2
+8:2
+Input 1 2 3 5 7 9 81 25 4927 625
+ 
+  
+50 60 20 30 10 90 20 10
+4 8 2 6 8 100 12 2 10
+3 5 7 9 25 49 81 2401 625
+2 13 4 15 8 21 16 7 56 32 64 128 256 512 12 49 144 61 1728
+Output 3:3
+7:2
+9:2
+25:2
+-1
+-1
+3:2
+5:2
+7:2
+9:2
+25:2
+49:2
+2:9
+12:3
+Sol def powerSequence(arr):
+ans = list()
+for i in range(len(arr)):
+first = arr[i]
+count = 1
+power = 2
+for j in range(i + 1 , len(arr)):
+if first ** power == arr[j]:
+count += 1
+power += 1
+if count > 1:
+ans.append(str(first) + ":" + str(count))
+return ans
+arr = [int(i) for i in input().split()]
+result = powerSequence(arr)
+if len(result) == 0:
+print(-1)
+else:
+for ans in result:
+ 
+  
+print(ans)
+DL 1
+Problem 11 Minimum Rotation
+Title Minimum Rotation
+Statement Given two space separated strings S1 and S2. You need to find out the
+minimum number of string rotations for the given string S1 to obtain S2. If
+string S1 and S2 are not convertible, print -1. Ignore the case of the
+characters while comparing the strings.
+Input Format:
+Space separated strings s1 and s2.
+Output Format:
+An integer number.
+Sample Input: programPython Pythonprogram
+Sample Output: 6
+Input onpyth python
+Learnpython LearnPython
+retryufdgf dffggdyr6
+dfgcbvnbdfgcbvnbdfgcbvnb dfgcbvnbdfgcbvnb
+abcdbcdabdca bdcaabcdbcda
+Output 2
+0
+-1
+-1
+4
+Sol def indexOfRot(S1, S2):
+ 
+  
+start = -1
+while True:
+start = S1.find(S2[0], start + 1)
+if start < 0:
+return -1
+if S1[start:] + S1[:start] == S2:
+return start
+S1, S2 = input().split()
+index = indexOfRot(S1.upper(), S2.upper())
+if index < 0:
+print(-1)
+else:
+print(min(index, (len(S1) - index)))
+DL 2
+Variant 11.1 Rotate and Derive
+Title Rotate and Derive
+Statement Given two space separated strings, S1 and S2. Check whether the strings
+can be derived from each other. One string can be derived from another by
+rotating either of the strings in any direction any number of times. Ignore
+the case of the characters while comparing the strings. Print True or False
+accordingly.
+Input format:
+Two space separated strings.
+Output format:
+True or False.
+Sample input:
+Laptop toplap
+Sample output
+True
+Input Abcd DbCa
+ABCD dcba
+AABB bAbA
+Abba AbBA
+ 
+  
+pqrstuvwxyz RSTVUWXYZ
+Output False
+False
+False
+True
+False
+Sol def isRot(S1, S2):
+start = -1
+while True:
+start = S1.find(S2[0], start + 1)
+if start < 0:
+return False
+if S1[start:] + S1[:start] == S2:
+return True
+S1, S2 = input().split()
+print(isRot(S1.upper(), S2.upper()))
+DL 2
+Problem 12 Longest Common Prefix
+Title Longest Common Prefix
+Statement Given a set of strings. Find the longest common prefix in all the strings.
+Assume that there is at least one string in the set. If no common prefix is
+found print -1.
+Input format:
+Multiple strings in a single line separated by space.
+Output format:
+Single line of string.
+Sample input:
+assistant assist assistance
+Sample output:
+assist
+Input green greener greenest greenep greenthe green greenist
+ 
+  
+jammed jambed jampot jambee
+abc ab abcd abcde abcdgdsk abchsjks
+paratype paratill paratope parathas paratext
+abcd ghijk abgrhi fgtrk aptrun ahsjndfn dhsjksj
+Output green
+jam
+ab
+parat
+-1
+Sol def lcp(strings):
+leastLen = len(min(strings, key = len))
+ans = ''
+for i in range(leastLen):
+for j in range(len(strings) - 1):
+if strings[j][i] != strings[j + 1][i]:
+return ans
+ans += strings[0][i]
+return ans
+ans = lcp(input().split())
+if len(ans) == 0:
+print(-1)
+else:
+print(ans)
+DL 2
+Variant 12.1 Maximum Length Prefix
+Title Maximum Length Prefix
+Statement Given a string (S). Find out the count of characters with minimum
+frequencies in S. Let this count be called N. Find the prefix from S, in
+which the frequency of each character is less than or equal to N.
+Input Format:
+Single line of input consisting of a string.
+ 
+  
+Output Format:
+Single line of output consisting of a string.
+Sample input: ppqrsppq
+Sample output: ppqrs
+Explanation:
+In the given string, the minimum frequency is 1. And the characters having
+this frequency are r and s. Therefore the value of N is 2. If we ppqrs as the
+required prefix, the frequency of each character in this prefix is less than
+or equal to 2. Note that, if we choose ppqrsp, instead of ppqrs, the
+frequency of p will be 3.
+Input aaabcd
+aabbbbbbdacef
+fghancfgjhkjdkfghancfghancfgjhkjdkfghancfghancefg
+sddgfdfga
+qwertsdfghjk
+Output aaabcd
+aabbbb
+fghanc
+sddgf
+qwertsdfghjk
+Sol def getLeastFreqCharsCount(string):
+freq = dict()
+for ch in string:
+if ch not in freq:
+freq[ch] = 1
+else:
+freq[ch] += 1
+return tuple(freq.values()).count(min(freq.values()))
+string = input()
+count = getLeastFreqCharsCount(string)
+freq = dict()
+ans = ''
+ 
+  
+for ch in string:
+if freq.get(ch, 0) == count:
+print(ans)
+break
+else:
+freq[ch] = freq.get(ch, 0) + 1
+ans += ch
+else:
+print(ans)
+DL 2
+Problem 13 Consecutive Repetition
+Title Consecutive Repetition
+Statement Given a set of strings. Remove all the consecutive duplicate characters
+from each string and print the set.
+Input format:
+Multiple strings in a single line separated by space.
+Output format:
+Multiple strings in a single line separated by space.
+Sample Input
+ppaarroott eeaaggllee
+Sample Output
+parot eagle
+Input assist mandaate pparroot xxyyzz
+aabbccddabcd abcdefefefefffeedd
+pythonn duplicaatess
+qqqqqqqqqqqqqqqqqqqqqqqqqqq yyyyyyyyyyyyyyyyyyyyyyyyyyyy
+aahgfhsaefdzxgj sdgfghjkbcvnm
+Output asist mandate parot xyz
+abcdabcd abcdefefefefed
+python duplicates
+ 
+  
+q y
+ahgfhsaefdzxgj sdgfghjkbcvnm
+Sol def remDup(string):
+dropIndexes = set()
+ans = ‘’
+for i in range(len(string) - 1):
+if string[i] == string[i + 1]:
+dropIndexes.add(i + 1)
+for i in range(len(string)):
+if i not in dropIndexes:
+ans += string[i]
+return ans
+strings = input().split()
+ans = []
+for string in strings:
+ans.append(remDup(string))
+print(*ans)
+DL 2
+Variant 13.1 Redundant Strings
+Title Redundant Strings
+Statement You are given a list of strings (all characters in small cases). Print the
+largest substring common to all the input strings. If no common substrings
+are found print -1.
+Input format:
+Multiple strings in a single line separated by comma.
+Output format:
+Multiple strings in a single line separated by space.
+Sample input:
+learn,learn is best,learnys,learn is for learnys
+Sample output:
+learn
+Input abcdef,bcde,pqrcde
+abc,def,ghjk,uiop,tsffsggd,tyui
+ 
+  
+hello,ohello,littlle,killde,bill,till,llill,mill,will,hll,kll,yll,qllt
+fbgdhtf,fhjbffhj,guihjcdrdyh,hjghgjbjkh,fyuttyreyhjk,hgyftrdrfyhgytft
+abghfhhh,dshjsnhhh,dhcdcejijhh,hshjwdkdwwjdhh,iadhyugdehedijwdhh,ws
+hjudhjkdnjkdnkdxhh
+Output cde
+-1
+ll
+-1
+hh
+Sol def isSubstr(string, strings):
+for checkStr in strings:
+if string not in checkStr:
+return False
+return True
+def redStrings(strings):
+minString = min(strings, key = len)
+for length in range(len(minString), 1, -1):
+for i in range(len(minString) - (length - 1)):
+if isSubstr(minString[i: i + length], strings):
+return minString[i: i + length]
+return -1
+print(redStrings(input().split(',')))
+DL 2
+Problem 14 Password Generator
+Title Password Generator
+Statement Given a set of strings, where each string is in the following format.
+employee_name:employee_number. Each string is separated by a comma
+and a space.
+For each string, find the largest digit in the employee_number, which is
+less than or equal to the length of the corresponding employee_name. If
+such a digit is present (M), concatenate the character present at the Mth
+ 
+  
+position in the employee_name to the output. If no such digit exists,
+concatenate the character X to the output.
+It should be noted that position starts from 1.
+Input format:
+Single line of input consisting of one or more strings in the format specified
+as above.
+Output format:
+Single line consisting of a single string.
+Sample input:
+Robert:36787, Tina:68721, Jo:56389
+Sample output:
+tiX
+Explanation:
+Length of Robert is 6 and 6 is present in the employee_number of Robert
+(36787). Alphabet at the 6th position (t) is appended. Length of Tina is 4
+and 4 is not present in 68721. 4 is not present in the employee_code of
+Tina. But the largest digit which is less than or equal to 4 is 2. The 2nd
+character in Tina is i. Length of Jo is 2. 2 is not present in the
+employee_code of Jo, neither a digit which is less than or equal to 2 is
+present in the employee_code of 2. Hence X is appended to the output.
+Input bert:612, Alpha:98769, Nitya:4321, J:5389
+Manohar:612, Ram:9876912
+Tim:6794, AlbertoEinstein:9876912, Wager:73625, MikePater:678594
+ReetaDeshai:2345
+sdfghjesrtyui:1234
+Output eXyX
+aa
+Xirr
+a
+g
+ 
+  
+Sol def generatePassword(string):
+name, code = string.split(':')
+revCode = sorted(code, reverse = True)
+for i in revCode:
+if int(i) <= len(name):
+return name[int(i) - 1]
+return 'X'
+ans = ''
+for string in input().split(', '):
+ans += generatePassword(string)
+print(ans)
+DL 2
+Variant 14.1 Funny Names
+Title Funny Names
+Statement Given a set of strings, where each string is in the following format.
+employee_name:employee_number. Each string is separated by a comma
+and a space.
+For each string, find the index of the largest digit in the employee_number.
+If there are more than 1 largest digit, pick the first one. Let it be called M.
+Insert X at the Mth index in the employee_name, if length of
+employee_name is greater than M. Otherwise append as many X
+characters as required to make the length of the employee_name equal to
+M. Print the modified employee_name.
+Input format:
+Single line of input consisting of one or more strings in the format specified
+as above.
+Output format:
+Single line consisting of multiple strings separated by space.
+Sample input:
+Robert:36787, Tina:68721, Jo:56389
+Sample output:
+RobXrt TXna JoXX
+Input bert:612, Alpha:98769, Nitya:4321, J:5389
+Manohar:612, Ram:9876912
+ 
+  
+Tim:6794, AlbertoEinstein:9876912, Wager:73625, MikePater:678594
+ReetaDeshai : 2345
+sdfghjesrtyui:1234
+Output Xert Xlpha Xitya JXX
+Xanohar Xam
+TiX XlbertoEinstein Xager MikeXater
+ReetXDeshai
+sdfXhjesrtyui
+Sol def funnyName(string):
+name, code = string.split(':')
+maxDigIndex = code.index(max(list(code)))
+if len(name) > maxDigIndex:
+return name[:maxDigIndex] + 'X' + name[maxDigIndex + 1:]
+else:
+return name + 'X'*(maxDigIndex - len(name))
+for string in input().split(', '):
+print(funnyName(string), end = ' ')
+DL 2
+Problem 15 Uncommon Words
+Title Uncommon Words
+Statement Given three sentences as strings. The task is to print the count of all the
+words from the first sentence which do not appear in the other two
+sentences.
+Input Format:
+Three sentences in three separate lines.
+Output Format:
+An integer in a single line.
+Sample Input:
+python for programming is best
+learning from python for programming
+python for programming
+ 
+  
+Sample Output:
+2
+Input This thing is bad
+Some thing is bad
+bad is something
+The world is nice place
+The home is a place
+The world is a nice home
+all a are b
+all c are d
+some d are c
+Let me eat sleep repeat for today
+Let me sleep
+Let me repeat and sleep
+What is your name
+Where do you live
+How does the world look like
+Output 1
+0
+2
+3
+4
+Sol def uncoWords(one, two, three):
+setOne, setTwo, setThree = set(one), set(two), set(three)
+return len(setOne.difference(setTwo.union(setThree)))
+print(uncoWords(input().split(), input().split(),
+input().split()))
+Complexity of the above code is O(k + m + n), where k, m and n are the
+number of words in the first, second and third sentences respectively.
+A solution consisting of loops (without the use of sets) will be k*(m + n)
+complex.
+DL 2
+ 
+  
+Variant 15.1 Common Words
+Title Common Words
+Statement Given two sentences as strings. The task is to print the sum of the number
+of the occurrences of all the common words in their respective sentences.
+Input Format:
+Two sentences in two separate lines.
+Output Format:
+Integers separated by space in a single line
+Sample Input:
+let me eat and sleep and let me repeat
+let me sleep because sleep is important
+Sample Output:
+9
+Input smoking is bad as it destroys your health
+smoking
+The home is a place where humans live together with animals and plants
+The world is a nice home where plants animals humans live together
+all c are d
+some d are c
+What is your name
+Where do you live
+How does the world look like ?
+How is your life in this world because you look miserable so are you okay ?
+Output 2
+20
+6
+0
+8
+Sol def commonWords(one, two):
+freq = dict()
+ 
+  
+# Complexity is m + n
+for word in one + two:
+freq[word] = freq.get(word, 0) + 1
+total = 0
+# Complexity is min(m, n)
+for word in set(one).intersection(set(two)):
+total += freq.get(word, 0)
+return total
+print(commonWords(input().split(), input().split()))
+Complexity of the above code is m + n, where m and n are the
+number of words in the first and the second sentences
+respectively.
+A solution consisting of loops (without the use of sets and
+dictionary) will be m*n complex.
+DL 2
+ 
+  
